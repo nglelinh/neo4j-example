@@ -48,11 +48,4 @@ class MovieController extends Controller
 
 		return response()->json($mov);
 	}
-
-	public function import()
-	{
-		$query = trim(file_get_contents(storage_path('movies.cypher')));
-
-		return $this->neo4j->run($query);
-	}
 }
